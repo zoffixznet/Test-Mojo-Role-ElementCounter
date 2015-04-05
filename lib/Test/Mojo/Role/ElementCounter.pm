@@ -113,7 +113,7 @@ The test we write:
             ->dived_text_is('a[href="/product/2"]' => 'Product 2')
             ->dived_text_is('a[href="/product/3"]' => 'Product 3')
         ->dive_out('> ul')
-        ->element_count_is('+ li + li a', 1);
+        ->element_count_is('+ li a', 1);
     ->dive_reset
     ->element_count_is('#products + p', 1)
     ->text_is('#products + p' => 'Select a product!')
