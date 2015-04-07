@@ -63,7 +63,7 @@ __END__
 
 =encoding utf8
 
-=for stopwords Znet Zoffix app
+=for stopwords Znet Zoffix app  natively
 
 =head1 NAME
 
