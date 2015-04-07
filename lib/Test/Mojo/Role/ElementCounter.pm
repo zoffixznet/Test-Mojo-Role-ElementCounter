@@ -122,6 +122,13 @@ The test we write:
 
 =for pod_spiffy end code section
 
+=head1 SEE ALSO
+
+Note that as of L<Mojolicious> version 6.06,
+L<Test::Mojo> implements the exact match
+version of C<element_count_is> natively (same method name).
+This role is helpful only if you need dive methods or ranges.
+
 =head1 DESCRIPTION
 
 A L<Test::Mojo> role that allows you to do strict element count tests on
