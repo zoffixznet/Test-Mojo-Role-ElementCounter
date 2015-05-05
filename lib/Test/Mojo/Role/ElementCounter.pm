@@ -34,8 +34,9 @@ sub dive_reset {
 
 sub dived_text_is {
     my $self = shift;
-    $_[0] = $self->_counter_selector_prefix . $_[0];
-    $self->text_is( @_ );
+    my @in = @_; # can't modify in-place
+    $in[0] = $self->_counter_selector_prefix . $in[0];
+    $self->text_is( @in );
 }
 
 sub element_count_is {

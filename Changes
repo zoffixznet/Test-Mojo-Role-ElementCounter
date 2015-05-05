@@ -1,5 +1,8 @@
 Revision history for Test-Mojo-Role-ElementCounter
 
+1.001003  2015-05-05
+        - Fixed fatal error with ->dived_text_is
+
 1.001002  2015-04-06
         - Added Test::Mojo::WithRoles to prereqs
         - Added POD note about Test::Mojo's native element_count_is
