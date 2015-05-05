@@ -1,5 +1,8 @@
 Revision history for Test-Mojo-Role-ElementCounter
 
+1.001004 2015-05-06
+	- Reuploading: PAUSE failure
+
 1.001003  2015-05-05
         - Fixed fatal error with ->dived_text_is
 
