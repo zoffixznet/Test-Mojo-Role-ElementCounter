@@ -3,6 +3,7 @@
 use Test::More;
 
 ok 'Shoot from the hip. Write tests later';
+# Now we did :) But this is still funny :)
 
 done_testing();
 

@@ -2,6 +2,7 @@ package Test::Mojo::Role::ElementCounter;
 
 use Mojo::Base -base;
 use Encode;
+use Carp qw/croak/;
 use Role::Tiny;
 
 # VERSION
@@ -42,7 +43,11 @@ sub dived_text_is {
 sub element_count_is {
     my ($self, $selector, $wanted_count, $desc) = @_;
 
-    $selector = $self->_counter_selector_prefix . $selector;
+    croak 'You gave me an undefined element count that you want'
+        unless defined $wanted_count;
+
+    my $pref = $self->_counter_selector_prefix;
+    $selector = join ',', map "$pref$_", split /,/,$selector;
 
     $desc ||= encode 'UTF-8', qq{element count for selector "$selector"};
     my $operator = $wanted_count =~ tr/<//d ? '<'
