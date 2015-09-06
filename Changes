@@ -1,6 +1,6 @@
 Revision history for Test-Mojo-Role-ElementCounter
 
-1.002005 2015-09-06
+1.001005 2015-09-06
    - Added proper tests
    - Fixed improper handling of ',' in selectors when ->dive_in is used (#1)
    - Fatalized cases where quantity for element count is undefined (#2)
