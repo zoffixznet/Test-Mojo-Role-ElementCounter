@@ -37,7 +37,12 @@ sub dived_text_is {
     my $self = shift;
     my @in = @_; # can't modify in-place
     $in[0] = $self->_counter_selector_prefix . $in[0];
-    $self->text_is( @in );
+
+    # Since Mojolicious 7.0 stupidly decided to stop trimming whitespace,
+    # we work around it by using text_like instead with a regex that
+    # does exact match, but ignores trailing/leading whitespace
+    $in[1] = qr/ ^ \s* \Q$in[1]\E \s* $ /x;
+    $self->text_like( @in );
 }
 
 sub element_count_is {
@@ -213,7 +218,13 @@ Resets stored selector prefix to an empty string (see C<dive_in>).
         ->dived_text_is('a' => 'Product 1');
 
 Same as L<Test::Mojo>'s C<text_is> method, except the selector will
-be prefixed by the stored selector prefix (see C<dive_in>)
+be prefixed by the stored selector prefix (see C<dive_in>).
+
+B<NOTE:> as of version 1.001006, L<Test::Mojo>'s C<text_like> will be used
+with a regex constructed to be the exact match, with any amount of whitespace
+before and after the string. This is done to workaround Mojolicious Donut
+breaking its whitespace handling in Mojo::DOM and by extention Test::Mojo,
+and leaving useless whitespace all over the place.
 
 =for pod_spiffy hr
 

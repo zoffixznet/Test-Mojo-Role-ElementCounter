@@ -1,5 +1,8 @@
 Revision history for Test-Mojo-Role-ElementCounter
 
+1.001006 2016-08-11
+   - Add workaround for Mojolicious 7.0 Test::Mojo text_is not trimming whitespace
+
 1.001005 2015-09-06
    - Added proper tests
    - Fixed improper handling of ',' in selectors when ->dive_in is used (#1)
