@@ -59,7 +59,7 @@ sub element_count_is {
         : $wanted_count =~ tr/>//d ? '>' : '==';
 
     my $count = $self->tx->res->dom->find($selector)->size;
-    return $self->_test('cmp_ok', $count, $operator, $wanted_count, $desc);
+    return $self->test('cmp_ok', $count, $operator, $wanted_count, $desc);
 }
 
 
